@@ -60,6 +60,20 @@ Any effects in tags will affect all text until the end of the string, or the nex
 | teal      |           | color         |
 | white     |           | color         |
 | yellow    |           | color         |
+| rgb       | :red,green,blue | Create a color from the given red, green, and blue values between 0 and 255. |
+| n         |           | Start a new line. |
+| br        |           | Start a new line. Alias for "n." |
+| font      | :font_asset_name | Change the font to the given font asset. |
+| f         | :font_asset_name | Alias for "font." |
+| alpha     | :magnitude | Set the alpha value of the text. |
+| a         | :magnitude | Alias for "alpha." |
+| x         | :magnitude | Offset the text horizontally by the given value. |
+| y         | :magnitude | Offset the text vertically by the given value. |
+| xy        | :magnitude_x,magnitude_y | Offset the text horizontally and vertically by the given values. |
+| scalex    | :magnitude | Scale text horizontally by the given value. |
+| scaley    | :magnitude | Scale text vertically by the given value. |
+| scalexy   | :magnitude_x,magnitude_y | Scale text horizontally and vertically by the given values. |
+| scale     | :magnitude_x,magnitude_y | Alias for "scalexy." |
 
 ## Core Functions
 
