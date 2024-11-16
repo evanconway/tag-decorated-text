@@ -81,7 +81,15 @@ Any effects in tags will affect all text until the end of the string, or the nex
 | p         | :pause_time   | Alias for "pause." |
 | charpause | :character,pause_time | Sets typing to pause for the given character the given time in milliseconds. |
 | cp        | :character,pause_time | Alias for "charpause." |
-
+| fade      | :alpha_min,alpha_max,cycle_time | Animates text with alpha fading. Cycle time is in milliseconds. |
+| shake     | :time,magnitude | Animates the text with a shaking effect. Time is in milliseconds and magnitude is the pixel offset. |
+| tremble   | :time,magnitude | Animates each character with a shake effect. Time is in milliseconds and magnitude is the pixel offset. |
+| chromatic | :time,steps_per_change,char_offset | Animates the text by shifting colors through an rgb cycle. Time is the time in milliseconds between each cycle change. Steps_per_change affects how quickly the colors change. Char_offset argument affects how different the color is between each character. |
+| wchromatic| :time,steps_per_change | Animates the text with a color changing affect like `chromatic`, but affects all characters the same. |
+| wave | :time,magnitude,char_offset | Animates the text with a wave effect. Time is given in milliseconds. Magnitude is the max number of pixels offset. Char_offset is how much height variation there is between each character. |
+| float | :time,magnitude | Animates the text with a floating effect. Time is given in milliseconds. Magnitude is the max number of pixels offset. |
+| blink | :alpha_min,alpha_max,cycle_time | Animates the text with a blinking effect. Cycle time is in milliseconds.
+| twitch | :count,magnitude,offset_time,wait_time_min,wait_time_max | Animates the text with a twitching animation. Sometimes, individual characters will be offset by the given magnitude. All times are in milliseconds. |
 
 
 ## Core Functions
