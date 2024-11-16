@@ -24,6 +24,42 @@ tag_decorated_text_draw(test, 0, 0);
 
 ![Example 1](https://github.com/evanconway/tagdecoratedtext/blob/main/example%20gifs/example_typing1.gif)
 
+## Effects
+
+The `TagDecoratedText` or `TagDecoratedTextDefault` functions both take a `source_string` argument. To add styling and effects, include keywords inside angle brackets: 
+
+`This is an <wave>example<> of text <red>with<> tag <chromatic>effects<>.`
+
+Any effects in tags will affect all text until the end of the string, or the next instance of empty angles brackets: `<>`. Some effects like `wave` can accept arguments of their own. These are included by adding a colon `:` after the tag and adding arguments separated by comma:
+
+`<wave:1000,15,0.5>woooooooooo<>`
+
+### Tags
+| Tag Name  | Arguments | Description   |
+| --------  | --------- | -----------   |
+| aqua      |           | color         |
+| black     |           | color         |
+| blue      |           | color         |
+| dkgray    |           | color         |
+| dkgrey    |           | color         |
+| pink      |           | color         |
+| fuchsia   |           | color         |
+| gray      |           | color         |
+| grey      |           | color         |
+| green     |           | color         |
+| lime      |           | color         |
+| ltgray    |           | color         |
+| ltgrey    |           | color         |
+| maroon    |           | color         |
+| navy      |           | color         |
+| olive     |           | color         |
+| orange    |           | color         |
+| purple    |           | color         |
+| red       |           | color         |
+| silver    |           | color         |
+| teal      |           | color         |
+| white     |           | color         |
+| yellow    |           | color         |
 
 ## Core Functions
 
