@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"StyleableTextAnimator",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"StyleableTextTyper",
   "isCompatibility":false,
   "isDnD":false,
