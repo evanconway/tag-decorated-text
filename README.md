@@ -74,6 +74,15 @@ Any effects in tags will affect all text until the end of the string, or the nex
 | scaley    | :magnitude | Scale text vertically by the given value. |
 | scalexy   | :magnitude_x,magnitude_y | Scale text horizontally and vertically by the given values. |
 | scale     | :magnitude_x,magnitude_y | Alias for "scalexy." |
+| sprite    | :sprite_asset_name | Turns next character into the given sprite asset. |
+| typing    | :time_between_types,chars_per_type | Sets new typing arguments. Time between types is given in milliseconds. Chars per type does not need to be an integer. |
+| t         | :time_between_types,chars_per_type | Alias for "typing." |
+| pause     | :pause_time   | When typing, pause the given time in milliseconds. Note that this will have no effect if used on a space character. |
+| p         | :pause_time   | Alias for "pause." |
+| charpause | :character,pause_time | Sets typing to pause for the given character the given time in milliseconds. |
+| cp        | :character,pause_time | Alias for "charpause." |
+
+
 
 ## Core Functions
 
