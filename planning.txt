@@ -268,3 +268,9 @@ Looks like firstly, the line indexes end up out of wack. If the first word is to
 It also appears that We didn't account for successive force new line commands. When starting a new line, our logic assumes that the previous characters have already been accounted for. But if we force a new line, then immediately force another line one character later, that single character never gets properly added in our line break logic.
 
 Ah, perhaps we can easily fix this simply only incrementing our line index if the char_x is not 0. That our system will only increment the line index once per condition that triggers a line change.
+
+16th of November, 2024
+
+We managed to use this library in a couple significant projects, and it's doing well! But we found a couple key features it's missing that I'd like to add. First, we don't have any sort of outline effect. The new SDF features make this easy to achieve, assuming the user provides a font with SDF enabled. I don't think it's a big deal to require that of the user, so we'll just go with that. This would also let us add the glow effect, and anything else that SDF includes. Second, we need often needed to "click" on text. This boils down to determining if a point collides with a given text instance. I think the most useful thing would be a function that accepts a position to check, the position of a tds instances, the tds instance itself, and any font alignments, then returns a boolean indicating if that position overlaps the tds instance.
+
+I have an idea for how to progress immediately. Let's make a simple example that highlights with an outline when you hover the mouse over it. This will require us to make the outline effect first, then the point overlap function.
