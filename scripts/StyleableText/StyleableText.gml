@@ -21,6 +21,23 @@ function TextStyle() constructor {
 	/// @ignore
 	new_line = false; // forces new line start
 	
+	// SDF effects
+	
+	outline_distance = 1;
+	outline_color = c_green;
+	outline_alpha = 0;
+
+	glow_start = 0;
+	glow_end = 2;
+	glow_color = c_red;
+	glow_alpha = 0;
+	
+	drop_shadow_softness = 8;
+	drop_shadow_offsetX = 4;
+	drop_shadow_offsetY = 4;
+	drop_shadow_color = c_gray;
+	drop_shadow_alpha = 1;
+	
 	/**
 	 * Get boolean indicating if the given style is equal to this one.
 	 *
@@ -39,6 +56,19 @@ function TextStyle() constructor {
 		if (style.scale_y != scale_y) return false;
 		if (style.offset_x != offset_x) return false;
 		if (style.offset_y != offset_y) return false;
+		if (style.outline_distance != outline_distance) return false;
+		if (style.outline_color != outline_color) return false;
+		if (style.outline_alpha != outline_alpha) return false;
+		if (style.glow_start != glow_start) return false;
+		if (style.glow_end != glow_end) return false;
+		if (style.glow_color != glow_color) return false;
+		if (style.glow_alpha != glow_alpha) return false;
+		if (style.drop_shadow_softness != drop_shadow_softness) return false;
+		if (style.drop_shadow_offsetX != drop_shadow_offsetX) return false;
+		if (style.drop_shadow_offsetY != drop_shadow_offsetY) return false;
+		if (style.drop_shadow_color != drop_shadow_color) return false;
+		if (style.drop_shadow_alpha != drop_shadow_alpha) return false;
+		
 		return true;
 	};
 	
@@ -53,6 +83,18 @@ function TextStyle() constructor {
 		offset_y = style.offset_y;
 		sprite = style.sprite;
 		new_line = style.new_line;
+		outline_distance = style.outline_distance;
+		outline_color = style.outline_color;
+		outline_alpha = style.outline_alpha;
+		glow_start = style.glow_start;
+		glow_end = style.glow_end;
+		glow_color = style.glow_color;
+		glow_alpha = style.glow_alpha;
+		drop_shadow_softness = style.drop_shadow_softness;
+		drop_shadow_offsetX = style.drop_shadow_offsetX;
+		drop_shadow_offsetY = style.drop_shadow_offsetY;
+		drop_shadow_color = style.drop_shadow_color;
+		drop_shadow_alpha = style.drop_shadow_alpha;
 	};
 	
 	/**
@@ -616,20 +658,30 @@ function __TagDecoratedTextStyleable(text, width=-1, height=-1) constructor {
 			var drawable = c.drawable;
 			if (c.page_index == text_page_index && drawable.style.alpha > 0) {
 				draw_set_font(drawable.style.font);
-				font_enable_effects(drawable.style.font, true, {
-					dropShadowEnable: false,
-					dropShadowSoftness: 20,
-					dropShadowOffsetX: 4,
-					dropShadowOffsetY: 4,
-					dropShadowAlpha: 1,
-					outlineEnable: false,
-					outlineDistance: 2,
-					outlineColour: c_black,
-					glowEnable: false,
-					glowEnd: 6,
-					glowColour: c_red,
-					glowAlpha: 4
-				});
+				
+				var sdf_effects_enabled = drawable.style.outline_alpha > 0 || drawable.style.glow_alpha > 0 || drawable.style.drop_shadow_alpha > 0;
+				
+				sdf_effects_enabled = false;
+				
+				if (sdf_effects_enabled) {
+					font_enable_effects(drawable.style.font, true, {
+						outlineEnable: drawable.style.outline_alpha > 0,
+						outlineDistance: drawable.style.outline_distance,
+						outlineColour: drawable.style.outline_color,
+						outlineAlpha: drawable.style.outline_alpha,
+						glowEnable: drawable.style.glow_alpha > 0, 
+						glowStart: drawable.style.glow_start,
+						glowEnd: drawable.style.glow_end,
+						glowColour: drawable.style.glow_color,
+						glowAlpha: drawable.style.glow_alpha,
+						dropShadowEnable: drawable.style.drop_shadow_alpha > 0,
+						dropShadowSoftness: drawable.style.drop_shadow_softness,
+						dropShadowOffsetX: drawable.style.drop_shadow_offsetX,
+						dropShadowOffsetY: drawable.style.drop_shadow_offsetY,
+						dropShadowColour: drawable.style.drop_shadow_color,
+						dropShadowAlpha: drawable.style.drop_shadow_alpha,
+					});
+				}
 				
 				var width_diff = page_width - text_line_widths[c.line_index];
 				var halign_offset = 0;
