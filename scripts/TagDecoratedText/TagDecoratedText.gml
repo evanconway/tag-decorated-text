@@ -528,13 +528,13 @@ function tag_decorated_text_set_typing_params(tag_decorated_text, time_between_t
 /**
  * Get if the given position overlaps with the given tag decorated text instance at its given position.
  *
- * @param {Struct.TagDecoratedText} tag_decorated_text
- * @param {real} position_x
- * @param {real} position_y
- * @param {real} text_x
- * @param {real} text_y
- * @param {Constant.HAlign} alignment_h
- * @param {Constant.VAlign} alignment_v
+ * @param {Struct.TagDecoratedText} tag_decorated_text TagDecoratedText instance to check position overlap.
+ * @param {real} position_x X value of position.
+ * @param {real} position_y Y value of position.
+ * @param {real} text_x X value of TagDecoratedText instance.
+ * @param {real} text_y Y value of TagDecoratedText instance.
+ * @param {Constant.HAlign} alignment_h Horizontal alignment of TagDecoratedText instance.
+ * @param {Constant.VAlign} alignment_v Vertical alignment of TagDecoratedText instance.
  */
 function tag_decorated_text_get_position_is_on(tag_decorated_text, position_x, position_y, text_x, text_y, alignment_h=fa_left, alignment_v=fa_top) {
 	var tds_width = tag_decorated_text_get_width(tag_decorated_text);

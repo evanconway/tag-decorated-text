@@ -388,3 +388,22 @@ _Returns:_  NA(`undefined`)
 | time_between_types_ms | Real | Time in milliseconds between type events. |
 | chars_per_type | Real | Number of characters typed per type event. |
 ---
+
+`tag_decorated_text_get_position_is_on`
+
+Get if the given position overlaps with the given tag decorated text instance at its given position.
+
+_Full function name:_  `tag_decorated_text_get_position_is_on(tag_decorated_text, position_x, position_y, text_x, text_y, [alignment_h], [alignment_v])`
+
+_Returns:_  (`Bool`)
+
+| Name        | DataType    |  Purpose   |
+| ----------- | ----------- | -----------|
+| tag_decorated_text | Struct.TagDecoratedText | TagDecoratedText instance to check position overlap. |
+| position_x | Real | X value of position. |
+| position_y | Real | Y value of position. |
+| text_x | Real | X value of TagDecoratedText instance. |
+| text_y | Real | Y value of TagDecoratedText instance. |
+| alignment_h | Constant.HAlign | Horizontal alignment of TagDecoratedText instance. |
+| alignment_v | Constant.VAlign | Vertical alignment of TagDecoratedText instance. |
+---
