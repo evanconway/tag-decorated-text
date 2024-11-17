@@ -276,3 +276,7 @@ We managed to use this library in a couple significant projects, and it's doing 
 I have an idea for how to progress immediately. Let's make a simple example that highlights with an outline when you hover the mouse over it. This will require us to make the outline effect first, then the point overlap function.
 
 It looks like invoking the font_enable_effects function causes a performance hit, but I don't think it's too bad yet. We'll have to keep an eye on this, but we'll push forward for now.
+
+We were able to make all changes, and the system still seems very good. I created a listing for this package on the game maker market place, but in creating the icons I realized I didn't have the ability to use angle brackets in the text. Next we need to add a way to force a character to appear in the string, even if it's a part of the syntax. My first though is to just use the > character.
+
+Went with the | char instead.
