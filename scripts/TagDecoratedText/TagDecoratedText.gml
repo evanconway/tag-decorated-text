@@ -515,7 +515,7 @@ function tag_decorated_text_set_character_on_type_callback(tag_decorated_text, c
 /**
  * Set the time between types and characters per type.
  *
- * @param {Struct.New_tag} tag_decorated_text
+ * @param {Struct.TagDecoratedText} tag_decorated_text
  * @param {real} time_between_types_ms
  * @param {real} chars_per_type
  */
@@ -523,4 +523,31 @@ function tag_decorated_text_set_typing_params(tag_decorated_text, time_between_t
 	with (tag_decorated_text) {
 		tag_decorated_text.typer.set_character_indexes_typing_params(0, styleable_text.character_array_length - 1, time_between_types_ms, chars_per_type);
 	}
+}
+
+/**
+ * Get if the given position overlaps with the given tag decorated text instance at its given position.
+ *
+ * @param {Struct.TagDecoratedText} tag_decorated_text
+ * @param {real} position_x
+ * @param {real} position_y
+ * @param {real} text_x
+ * @param {real} text_y
+ * @param {Constant.HAlign} alignment_h
+ * @param {Constant.VAlign} alignment_v
+ */
+function tag_decorated_text_is_position_on(tag_decorated_text, position_x, position_y, text_x, text_y, alignment_h=fa_left, alignment_v=fa_top) {
+	var tds_width = tag_decorated_text_get_width(tag_decorated_text);
+	var tds_height = tag_decorated_text_get_height(tag_decorated_text);
+	var start_x = text_x;
+	if (alignment_h == fa_center) start_x -= (tds_width / 2);
+	if (alignment_h == fa_right) start_x -= tds_width;
+	var start_y = text_y;
+	if (alignment_v == fa_middle) start_y -= (tds_height / 2);
+	if (alignment_v == fa_bottom) start_y -= tds_height;
+	var end_x = start_x + tds_width;
+	var end_y = start_y + tds_height;
+	var x_in = position_x >= start_x && position_x <= end_x;
+	var y_in = position_y >= start_y && position_y <= end_y;
+	return x_in && y_in;
 }
