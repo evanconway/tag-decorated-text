@@ -536,7 +536,7 @@ function tag_decorated_text_set_typing_params(tag_decorated_text, time_between_t
  * @param {Constant.HAlign} alignment_h
  * @param {Constant.VAlign} alignment_v
  */
-function tag_decorated_text_is_position_on(tag_decorated_text, position_x, position_y, text_x, text_y, alignment_h=fa_left, alignment_v=fa_top) {
+function tag_decorated_text_get_position_is_on(tag_decorated_text, position_x, position_y, text_x, text_y, alignment_h=fa_left, alignment_v=fa_top) {
 	var tds_width = tag_decorated_text_get_width(tag_decorated_text);
 	var tds_height = tag_decorated_text_get_height(tag_decorated_text);
 	var start_x = text_x;
