@@ -509,6 +509,78 @@ function __TagDecoratedTextStyleable(text, width=-1, height=-1) constructor {
 		if (is_string(sprite) && asset_get_type(sprite) != asset_sprite) show_error("name given for sprite command is not a sprite asset", true);
 		character_array[index].style.sprite = asset_get_index(sprite);
 	};
+	/// @ignore
+	set_character_outline_distance = function(index_start, index_end, outline_distance) {
+		invoke_callback_on_character_range(index_start, index_end, method({ outline_distance }, function(c) {
+			c.style.outline_distance = outline_distance;
+		}));
+	};
+	/// @ignore
+	set_character_outline_color = function(index_start, index_end, outline_color) {
+		invoke_callback_on_character_range(index_start, index_end, method({ outline_color }, function(c) {
+			c.style.outline_color = outline_color;
+		}));
+	};
+	/// @ignore
+	set_character_outline_alpha = function(index_start, index_end, outline_alpha) {
+		invoke_callback_on_character_range(index_start, index_end, method({ outline_alpha }, function(c) {
+			c.style.outline_alpha = outline_alpha;
+		}));
+	};
+	/// @ignore
+	set_character_glow_start = function(index_start, index_end, glow_start) {
+		invoke_callback_on_character_range(index_start, index_end, method({ glow_start }, function(c) {
+			c.style.glow_start = glow_start;
+		}));
+	};
+	/// @ignore
+	set_character_glow_end = function(index_start, index_end, glow_end) {
+		invoke_callback_on_character_range(index_start, index_end, method({ glow_end }, function(c) {
+			c.style.glow_end = glow_end;
+		}));
+	};
+	/// @ignore
+	set_character_glow_color = function(index_start, index_end, glow_color) {
+		invoke_callback_on_character_range(index_start, index_end, method({ glow_color }, function(c) {
+			c.style.glow_color = glow_color;
+		}));
+	};
+	/// @ignore
+	set_character_glow_alpha = function(index_start, index_end, glow_alpha) {
+		invoke_callback_on_character_range(index_start, index_end, method({ glow_alpha }, function(c) {
+			c.style.glow_alpha = glow_alpha;
+		}));
+	};
+	
+	/// @ignore
+	set_character_drop_shadow_softness = function(index_start, index_end, drop_shadow_softness) {
+		invoke_callback_on_character_range(index_start, index_end, method({ drop_shadow_softness }, function(c) {
+			c.style.drop_shadow_softness = drop_shadow_softness;
+		}));
+	};
+	/// @ignore
+	set_character_drop_shadow_offsetX = function(index_start, index_end, drop_shadow_offsetX) {
+		invoke_callback_on_character_range(index_start, index_end, method({ drop_shadow_offsetX }, function(c) {
+			c.style.drop_shadow_offsetX = drop_shadow_offsetX;
+		}));
+	};
+	/// @ignore
+	set_character_drop_shadow_offsetY = function(index_start, index_end, drop_shadow_offsetY) {
+		invoke_callback_on_character_range(index_start, index_end, method({ drop_shadow_offsetY }, function(c) {
+			c.style.drop_shadow_offsetY = drop_shadow_offsetY;
+		}));
+	};
+	/// @ignore
+	set_character_drop_shadow_color = function(index_start, index_end, drop_shadow_color) {
+		invoke_callback_on_character_range(index_start, index_end, method({ drop_shadow_color }, function(c) {
+			c.style.drop_shadow_color = drop_shadow_color;
+		}));
+	};	/// @ignore
+	set_character_drop_shadow_alpha = function(index_start, index_end, drop_shadow_alpha) {
+		invoke_callback_on_character_range(index_start, index_end, method({ drop_shadow_alpha }, function(c) {
+			c.style.drop_shadow_alpha = drop_shadow_alpha;
+		}));
+	};
 	
 	// drawable setters
 	
