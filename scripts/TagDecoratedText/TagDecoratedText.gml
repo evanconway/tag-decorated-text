@@ -107,6 +107,11 @@ function TagDecoratedTextDefault(source_string, default_effects = "", width = -1
 		
 		// handle regular text
 		if (c != "<") {
+			// handle forced character (what is best character for this?)
+			if (c == "|") {
+				i += 1;
+				c = i <= string_length(source_string) ? string_char_at(source_string, i) : "";
+			}
 			displayed_text += c;
 			index++;
 		}

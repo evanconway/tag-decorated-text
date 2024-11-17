@@ -1,15 +1,18 @@
 {
   "FolderOrderSettings":[
     {"name":"asset_listing","order":14,"path":"folders/asset_listing.yy",},
+    {"name":"tests","order":15,"path":"folders/tests.yy",},
     {"name":"TagDecoratedText","order":1,"path":"folders/TagDecoratedText.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"fnt_bigger","order":8,"path":"fonts/fnt_bigger/fnt_bigger.yy",},
     {"name":"fnt_handwriting","order":6,"path":"fonts/fnt_handwriting/fnt_handwriting.yy",},
+    {"name":"fnt_icon_bigger","order":6,"path":"fonts/fnt_icon_bigger/fnt_icon_bigger.yy",},
     {"name":"fnt_screen_shot","order":5,"path":"fonts/fnt_screen_shot/fnt_screen_shot.yy",},
     {"name":"fnt_styleable_text_font_default","order":1,"path":"fonts/fnt_styleable_text_font_default/fnt_styleable_text_font_default.yy",},
     {"name":"obj_asset_icon","order":4,"path":"objects/obj_asset_icon/obj_asset_icon.yy",},
     {"name":"obj_examples","order":2,"path":"objects/obj_examples/obj_examples.yy",},
+    {"name":"obj_forced_character","order":1,"path":"objects/obj_forced_character/obj_forced_character.yy",},
     {"name":"obj_highlight_button","order":7,"path":"objects/obj_highlight_button/obj_highlight_button.yy",},
     {"name":"obj_new_text_test","order":3,"path":"objects/obj_new_text_test/obj_new_text_test.yy",},
     {"name":"obj_screen_shots","order":3,"path":"objects/obj_screen_shots/obj_screen_shots.yy",},
