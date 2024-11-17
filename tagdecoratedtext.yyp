@@ -20,6 +20,7 @@
   },
   "name":"tagdecoratedtext",
   "resources":[
+    {"id":{"name":"fnt_bigger","path":"fonts/fnt_bigger/fnt_bigger.yy",},},
     {"id":{"name":"fnt_handwriting","path":"fonts/fnt_handwriting/fnt_handwriting.yy",},},
     {"id":{"name":"fnt_styleable_text_font_default","path":"fonts/fnt_styleable_text_font_default/fnt_styleable_text_font_default.yy",},},
     {"id":{"name":"obj_examples","path":"objects/obj_examples/obj_examples.yy",},},

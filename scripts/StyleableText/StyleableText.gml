@@ -36,7 +36,7 @@ function TextStyle() constructor {
 	drop_shadow_offsetX = 4;
 	drop_shadow_offsetY = 4;
 	drop_shadow_color = c_gray;
-	drop_shadow_alpha = 1;
+	drop_shadow_alpha = 0;
 	
 	/**
 	 * Get boolean indicating if the given style is equal to this one.
@@ -732,28 +732,23 @@ function __TagDecoratedTextStyleable(text, width=-1, height=-1) constructor {
 				draw_set_font(drawable.style.font);
 				
 				var sdf_effects_enabled = drawable.style.outline_alpha > 0 || drawable.style.glow_alpha > 0 || drawable.style.drop_shadow_alpha > 0;
-				
-				sdf_effects_enabled = false;
-				
-				if (sdf_effects_enabled) {
-					font_enable_effects(drawable.style.font, true, {
-						outlineEnable: drawable.style.outline_alpha > 0,
-						outlineDistance: drawable.style.outline_distance,
-						outlineColour: drawable.style.outline_color,
-						outlineAlpha: drawable.style.outline_alpha,
-						glowEnable: drawable.style.glow_alpha > 0, 
-						glowStart: drawable.style.glow_start,
-						glowEnd: drawable.style.glow_end,
-						glowColour: drawable.style.glow_color,
-						glowAlpha: drawable.style.glow_alpha,
-						dropShadowEnable: drawable.style.drop_shadow_alpha > 0,
-						dropShadowSoftness: drawable.style.drop_shadow_softness,
-						dropShadowOffsetX: drawable.style.drop_shadow_offsetX,
-						dropShadowOffsetY: drawable.style.drop_shadow_offsetY,
-						dropShadowColour: drawable.style.drop_shadow_color,
-						dropShadowAlpha: drawable.style.drop_shadow_alpha,
-					});
-				}
+				font_enable_effects(drawable.style.font, sdf_effects_enabled, {
+					outlineEnable: drawable.style.outline_alpha > 0,
+					outlineDistance: drawable.style.outline_distance,
+					outlineColour: drawable.style.outline_color,
+					outlineAlpha: drawable.style.outline_alpha,
+					glowEnable: drawable.style.glow_alpha > 0, 
+					glowStart: drawable.style.glow_start,
+					glowEnd: drawable.style.glow_end,
+					glowColour: drawable.style.glow_color,
+					glowAlpha: drawable.style.glow_alpha,
+					dropShadowEnable: drawable.style.drop_shadow_alpha > 0,
+					dropShadowSoftness: drawable.style.drop_shadow_softness,
+					dropShadowOffsetX: drawable.style.drop_shadow_offsetX,
+					dropShadowOffsetY: drawable.style.drop_shadow_offsetY,
+					dropShadowColour: drawable.style.drop_shadow_color,
+					dropShadowAlpha: drawable.style.drop_shadow_alpha,
+				});
 				
 				var width_diff = page_width - text_line_widths[c.line_index];
 				var halign_offset = 0;

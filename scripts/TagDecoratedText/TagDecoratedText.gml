@@ -193,6 +193,58 @@ function TagDecoratedTextDefault(source_string, default_effects = "", width = -1
 			styleable_text.set_character_scale_y(s, e, aargs[0]);
 		}
 		if (cmd == "s" || cmd == "sprite") styleable_text.set_character_sprite(s, aargs[0]);
+		
+		// sdf effects
+		/*
+			To set color for the sdf effects, we'll use a hack that parses an rgb value. We have to get the
+			original arguments to parst since our default aarg logic doesn't parse the rgb syntax correctly.
+			We may want to change this later. We'll use commands[i] to get the original command.
+		*/
+		if (cmd == "outline") {
+			if (array_length(aargs) != 3) show_error("incorrect number of arguments given for outline command", true);
+			styleable_text.set_character_outline_distance(s, e, aargs[0]);
+			styleable_text.set_character_outline_alpha(s, e, aargs[2]);
+			try {
+				var original_aargs_string = commands[i].original_aargs;
+				var rgb_string = string_split(original_aargs_string, ",")[1];
+				var rgb_arr = string_split(rgb_string, "-");
+				var outline_color = make_color_rgb(real(rgb_arr[0]), real(rgb_arr[1]), real(rgb_arr[2]));
+				styleable_text.set_character_outline_color(s, e, outline_color);
+			} catch(error) {
+				show_error("glow effect color argument must in format: <number>-<number>-<number>", true);
+			}
+		}
+		if (cmd == "glow") {
+			if (array_length(aargs) != 4) show_error("incorrect number of arguments given for glow command", true);
+			styleable_text.set_character_glow_start(s, e, aargs[0]);
+			styleable_text.set_character_glow_end(s, e, aargs[1]);
+			styleable_text.set_character_glow_alpha(s, e, aargs[3]);
+			try {
+				var original_aargs_string = commands[i].original_aargs;
+				var rgb_string = string_split(original_aargs_string, ",")[2];
+				var rgb_arr = string_split(rgb_string, "-");
+				var glow_color = make_color_rgb(real(rgb_arr[0]), real(rgb_arr[1]), real(rgb_arr[2]));
+				styleable_text.set_character_glow_color(s, e, glow_color);
+			} catch(error) {
+				show_error("glow effect color argument must in format: <number>-<number>-<number>", true);
+			}
+		}
+		if (cmd == "shadow") {
+			if (array_length(aargs) != 5) show_error("incorrect number of arguments given for shadow command", true);
+			styleable_text.set_character_drop_shadow_softness(s, e, aargs[0]);
+			styleable_text.set_character_drop_shadow_offsetX(s, e, aargs[1]);
+			styleable_text.set_character_drop_shadow_offsetY(s, e, aargs[2]);
+			styleable_text.set_character_drop_shadow_alpha(s, e, aargs[4]);
+			try {
+				var original_aargs_string = commands[i].original_aargs;
+				var rgb_string = string_split(original_aargs_string, ",")[3];
+				var rgb_arr = string_split(rgb_string, "-");
+				var shadow_color = make_color_rgb(real(rgb_arr[0]), real(rgb_arr[1]), real(rgb_arr[2]));
+				styleable_text.set_character_drop_shadow_color(s, e, shadow_color);
+			} catch(error) {
+				show_error("shadow effect color argument must in format: <number>-<number>-<number>", true);
+			}
+		}
 	}
 	
 	styleable_text.build();
