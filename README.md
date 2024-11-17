@@ -75,6 +75,9 @@ Any effects in tags will affect all text until the end of the string, or the nex
 | scalexy   | :magnitude_x,magnitude_y | Scale text horizontally and vertically by the given values. |
 | scale     | :magnitude_x,magnitude_y | Alias for "scalexy." |
 | sprite    | :sprite_asset_name | Turns next character into the given sprite asset. |
+| outline   | :distance,color,alpha | Adds outline with given distance in pixels, color, and alpha. Note that the ouline cannot extend past the SDF limit of the font. |
+| glow      | :start,end,color,alpha | Adds glow effect with given fade start, end, color, and alpha. Note that glow effect cannot extend past the SDF limit of the font. |
+| shadow    | :softness,offset_x,offset_y,color,alpha | Adds drop shadow effect with the given arguments. Note that the shadow effect cannot extend past the SDF limit of the font. |
 | typing    | :time_between_types,chars_per_type | Sets new typing arguments. Time between types is given in milliseconds. Chars per type does not need to be an integer. |
 | t         | :time_between_types,chars_per_type | Alias for "typing." |
 | pause     | :pause_time   | When typing, pause the given time in milliseconds. Note that this will have no effect if used on a space character. |
