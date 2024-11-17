@@ -616,6 +616,20 @@ function __TagDecoratedTextStyleable(text, width=-1, height=-1) constructor {
 			var drawable = c.drawable;
 			if (c.page_index == text_page_index && drawable.style.alpha > 0) {
 				draw_set_font(drawable.style.font);
+				font_enable_effects(drawable.style.font, true, {
+					dropShadowEnable: false,
+					dropShadowSoftness: 20,
+					dropShadowOffsetX: 4,
+					dropShadowOffsetY: 4,
+					dropShadowAlpha: 1,
+					outlineEnable: false,
+					outlineDistance: 2,
+					outlineColour: c_black,
+					glowEnable: false,
+					glowEnd: 6,
+					glowColour: c_red,
+					glowAlpha: 4
+				});
 				
 				var width_diff = page_width - text_line_widths[c.line_index];
 				var halign_offset = 0;
