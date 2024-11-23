@@ -1,16 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_forced_character",
+  "%Name":"obj_change_type_time_bug",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_forced_character",
+  "name":"obj_change_type_time_bug",
   "overriddenProperties":[],
   "parent":{
-    "name":"forced character",
-    "path":"folders/tests/forced character.yy",
+    "name":"change type timings bug",
+    "path":"folders/tests/change type timings bug.yy",
   },
   "parentObjectId":null,
   "persistent":false,
