@@ -35,6 +35,14 @@ function StyleableTextTyper(text, animator) constructor {
 			chars_per_type: new_chars_per_type
 		};
 		for (var i = index_start; i <= index_end; i++) character_typing_params[i] = params;
+		
+		/*
+		Fixes bug where first type always used stock type timings. This is arguably dangerous
+		because the current_typing_params are not necessarily the typing params of the char
+		at index 0. However there is no situation right now where we call this function other
+		than during text creation, so we can get away with it for now.
+		*/
+		current_typing_params = character_typing_params[0];
 	};
 	
 	// mapping between indexes of chars and array of entry animations for said chars

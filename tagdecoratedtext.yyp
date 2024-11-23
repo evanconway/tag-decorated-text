@@ -53,10 +53,10 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rm_change_type_timing_bug","path":"rooms/rm_change_type_timing_bug/rm_change_type_timing_bug.yy",},},
-    {"roomId":{"name":"rm_asset_icon","path":"rooms/rm_asset_icon/rm_asset_icon.yy",},},
     {"roomId":{"name":"rm_screen_shots","path":"rooms/rm_screen_shots/rm_screen_shots.yy",},},
     {"roomId":{"name":"rm_force_character","path":"rooms/rm_force_character/rm_force_character.yy",},},
+    {"roomId":{"name":"rm_change_type_timing_bug","path":"rooms/rm_change_type_timing_bug/rm_change_type_timing_bug.yy",},},
+    {"roomId":{"name":"rm_asset_icon","path":"rooms/rm_asset_icon/rm_asset_icon.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "templateType":"game",
