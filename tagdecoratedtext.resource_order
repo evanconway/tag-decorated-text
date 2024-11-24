@@ -3,8 +3,8 @@
     {"name":"asset_listing","order":14,"path":"folders/asset_listing.yy",},
     {"name":"TagDecoratedText","order":1,"path":"folders/TagDecoratedText.yy",},
     {"name":"tests","order":15,"path":"folders/tests.yy",},
-    {"name":"forced character","order":2,"path":"folders/tests/forced character.yy",},
     {"name":"change type timings bug","order":3,"path":"folders/tests/change type timings bug.yy",},
+    {"name":"forced character","order":2,"path":"folders/tests/forced character.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"fnt_bigger","order":8,"path":"fonts/fnt_bigger/fnt_bigger.yy",},

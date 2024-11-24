@@ -389,6 +389,7 @@ function tag_decorated_text_reset_animations(tag_decorated_text) {
 function tag_decorated_text_reset_typing(tag_decorated_text) {
 	tag_decorated_text.animator.reset();
 	tag_decorated_text.typer.reset_typing();
+	tag_decorated_text.typer.update(0); // ensures drawables are hidden after reset
 	tag_decorated_text.styleable_text.text_page_index = 0;
 }
 
